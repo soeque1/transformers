@@ -39,6 +39,13 @@ if is_torch_available():
         "GPT2PreTrainedModel",
         "load_tf_weights_in_gpt2",
     ]
+    _import_structure["modeling_mlm_gpt2"] = [
+        "MLMGPT2DoubleHeadsModel",
+        "MLMGPT2ForSequenceClassification",
+        "MLMGPT2LMHeadModel",
+        "MLMGPT2Model",
+        "MLMGPT2PreTrainedModel",
+    ]
 
 if is_tf_available():
     _import_structure["modeling_tf_gpt2"] = [
@@ -69,6 +76,13 @@ if TYPE_CHECKING:
             GPT2PreTrainedModel,
             load_tf_weights_in_gpt2,
         )
+
+        from .modeling_mlm_gpt2 import (
+            MLMGPT2LMHeadModel,
+            MLMGPT2Model,
+            MLMGPT2PreTrainedModel,
+        )
+
 
     if is_tf_available():
         from .modeling_tf_gpt2 import (

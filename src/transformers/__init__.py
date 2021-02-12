@@ -591,6 +591,15 @@ if is_torch_available():
             "load_tf_weights_in_gpt2",
         ]
     )
+    _import_structure["models.gpt2"].extend(
+        [
+            "MLMGPT2DoubleHeadsModel",
+            "MLMGPT2ForSequenceClassification",
+            "MLMGPT2LMHeadModel",
+            "MLMGPT2Model",
+            "MLMGPT2PreTrainedModel",
+        ]
+    )
     _import_structure["models.layoutlm"].extend(
         [
             "LAYOUTLM_PRETRAINED_MODEL_ARCHIVE_LIST",
@@ -1667,6 +1676,10 @@ if TYPE_CHECKING:
             GPT2Model,
             GPT2PreTrainedModel,
             load_tf_weights_in_gpt2,
+        )
+        from .models.gpt2 import (
+            MLMGPT2LMHeadModel,
+            MLMGPT2PreTrainedModel
         )
         from .models.layoutlm import (
             LAYOUTLM_PRETRAINED_MODEL_ARCHIVE_LIST,
